@@ -1,32 +1,47 @@
 import "../styles/general.css";
+import Input from "./input.jsx";
+import { useState } from "react";
+//if we want parent to remember
 
-function General() {
+const inputs = [
+  {
+    name: "first-name",
+    label: "First Name:",
+    type: "text",
+    key: crypto.randomUUID(),
+  },
+  {
+    name: "last-name",
+    label: "Last Name:",
+    type: "text",
+    key: crypto.randomUUID(),
+  },
+  {
+    name: "email",
+    label: "Email Address",
+    type: "email",
+    key: crypto.randomUUID(),
+  },
+];
+
+function General({ updateInputArr, inputValues }) {
   return (
-    <>
-      <div className="input">
-        <label htmlFor="first-name">First Name:</label>
-        <input type="text" id="first-name" />
-      </div>
-      <div className="input">
-        <label htmlFor="last-name">Last Name:</label>
-        <input type="text" id="last-name" />
-      </div>
-
-      <div className="input">
-        <label htmlFor="email">Email:</label>
-        <input type="text" id="email" />
-      </div>
-
-      <div className="input">
-        <label htmlFor="phone-number">Phone Number: </label>
-        <input type="tel" id="phone-number" />
-      </div>
-
-      <div className="input">
-        <label htmlFor="address">Adress: </label>
-        <input type="text" id="address" />
-      </div>
-    </>
+    <div className="input-section">
+      {inputs.map((input) => {
+        return (
+          <Input
+            name={input.name}
+            type={input.type}
+            label={input.label}
+            key={input.key}
+            updateInputs={updateInputArr}
+            sectionIndex="0"
+            index={inputs.indexOf(input)}
+            initialValue={inputValues[inputs.indexOf(input)]}
+          />
+        );
+      })}
+    </div>
   );
 }
 
