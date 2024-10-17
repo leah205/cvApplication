@@ -23,7 +23,7 @@ button img {
 }
 .form-container {
   padding: 20px;
-  background: rgb(239, 238, 238);
+  background: rgb(245, 245, 245);
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   width: 100%;
@@ -45,4 +45,12 @@ button img {
 }
 .form-container label {
   font-size: 1.5rem;
+}
+.update-button {
+  width: 100%;
+  font-size: 2rem;
+  background: rgb(226, 225, 225);
+}
+.update-button:hover {
+  background: rgb(208, 208, 208);
 }
