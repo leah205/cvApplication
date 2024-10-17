@@ -18,8 +18,20 @@ const inputs = [
   },
   {
     name: "email",
-    label: "Email Address",
+    label: "Email Address:",
     type: "email",
+    key: crypto.randomUUID(),
+  },
+  {
+    name: "phone-number",
+    label: "Phone Number:",
+    type: "tel",
+    key: crypto.randomUUID(),
+  },
+  {
+    name: "address",
+    label: "Home Address:",
+    type: "text",
     key: crypto.randomUUID(),
   },
 ];

@@ -1,4 +1,5 @@
 import "../styles/Education.css";
+import { useState } from "react";
 
 function EducationSection({ education }) {
   <div className="input">
@@ -8,17 +9,31 @@ function EducationSection({ education }) {
 }
 
 function Education() {
-  const [educations, setEducations] = useState({});
+  const [educations, setEducations] = useState([
+    {
+      school: "",
+      degree: "",
+      major: "",
+      grad_date: "",
+      key: crypto.randomUUID(),
+    },
+  ]);
   function createEducation() {
     setEducations([
       ...educations,
-      { school: "", degree: "", major: "", grad_date: "" },
+      {
+        school: "",
+        degree: "",
+        major: "",
+        grad_date: "",
+        key: crypto.randomUUID(),
+      },
     ]);
   }
-  /*return (
+  /* return (
     <>
       {educations.map((education) => {
-        return <Education education={education} />;
+        return <Input type="text" key={education.key} />;
       })}
       <button className="add-education" onclick={createEducation}>
         Add Education
