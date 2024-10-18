@@ -9,6 +9,7 @@ import InfoContainer from "./components/infoContainer";
 function App() {
   const [openSection, setOpenSection] = useState(-1);
   const [generalInputs, setGeneralInputs] = useState(Array(5));
+  const [educationInputs, setEducationInputs] = useState();
   function editSection(index) {
     if (openSection == index) {
       setOpenSection(-1);

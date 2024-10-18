@@ -14,7 +14,7 @@ function Input({
   const [value, setValue] = useState(initialValue);
   function handleChange(e) {
     setValue(e.target.value);
-    updateInputs(sectionIndex, index, e.target.value);
+    //updateInputs(sectionIndex, index, e.target.value);
   }
   return (
     <div className="input">
