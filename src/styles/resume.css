@@ -1,5 +1,14 @@
 .resume {
   height: 80vh;
+  font-size: 1.3rem;
+  padding: 20px;
   border: 1px solid black;
   width: 30vw;
+}
+.header-section {
+  text-align: center;
+  font-size: 1.5rem;
+}
+h1 {
+  font-size: 2rem;
 }

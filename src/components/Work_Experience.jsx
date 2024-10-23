@@ -35,8 +35,16 @@ const inputs = [
   },
 ];
 
-export default function WorkExperience() {
+export default function WorkExperience({
+  performUpdate,
+  needsUpdate,
+  setFunc,
+}) {
   const [jobs, setJobs] = useState([]);
+  const [data, setData] = useState([]);
+  if (needsUpdate) {
+    performUpdate(data, setFunc);
+  }
   function deleteJob(index) {
     setJobs(jobs.filter((job) => jobs.indexOf(job) != index));
   }
@@ -70,6 +78,9 @@ export default function WorkExperience() {
                     label={input.label}
                     name={input.name}
                     key={input.key}
+                    data={data}
+                    index={jobs.indexOf(job)}
+                    setData={setData}
                   ></Input>
                 );
               })}
