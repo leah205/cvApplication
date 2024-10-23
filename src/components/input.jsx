@@ -1,20 +1,16 @@
 import { useState } from "react";
 
-function Input({
-  type,
-  name,
-  label,
-  updateInputs,
-  sectionIndex,
-  index,
-  initialValue = "",
-}) {
+function Input({ type, name, label, setData, data, initialValue = "", index }) {
   //dont do state for props im confused
 
   const [value, setValue] = useState(initialValue);
   function handleChange(e) {
     setValue(e.target.value);
-    //updateInputs(sectionIndex, index, e.target.value);
+    if (!data[index]) {
+      data[index] = {};
+    }
+    data[index][name] = e.target.value;
+    setData(data);
   }
   return (
     <div className="input">

@@ -2,6 +2,7 @@ import "../styles/Education.css";
 import { useState } from "react";
 import Input from "./input";
 import Select from "./Select";
+import DynamicInputContainer from "./dynamicInputSection";
 
 const inputs = [
   {
@@ -30,8 +31,28 @@ const inputs = [
   },
 ];
 
-function Education() {
+const selectOptions = [
+  {
+    value: "BS",
+    key: crypto.randomUUID(),
+  },
+  { value: "AS", key: crypto.randomUUID() },
+  { value: "MS", key: crypto.randomUUID() },
+  { value: "PHD", key: crypto.randomUUID() },
+];
+
+function Education({ performUpdate, needsUpdate, setFunc }) {
   const [educations, setEducations] = useState([]);
+  const [data, setData] = useState([]);
+  if (needsUpdate) {
+    performUpdate(data, setFunc);
+  }
+  function deleteEducation(index) {
+    setEducations(
+      educations.filter((education) => educations.indexOf(education) != index)
+    );
+  }
+
   function createEducation() {
     setEducations([
       ...educations,
@@ -44,24 +65,39 @@ function Education() {
       },
     ]);
   }
+  //make input set part of data not whole date please maybe change it to include index in parameters
   return (
     <>
-      {educations.map((education) => {
-        return (
-          <div className="input-section" key={education.key}>
-            {inputs.map((input) => {
-              return (
-                <Input
-                  type={input.type}
-                  label={input.label}
-                  name={input.name}
-                  key={input.key}
-                ></Input>
-              );
-            })}
-          </div>
-        );
-      })}
+      <DynamicInputContainer
+        createFunction={createEducation}
+        deleteFunction={deleteEducation}
+        buttonText="Add Education"
+      >
+        {educations.map((education) => {
+          return (
+            <div className="input-section" key={education.key}>
+              {inputs.map((input) => {
+                return (
+                  <Input
+                    setData={setData}
+                    type={input.type}
+                    label={input.label}
+                    name={input.name}
+                    key={input.key}
+                    data={data}
+                    index={educations.indexOf(education)}
+                  ></Input>
+                );
+              })}
+              <Select
+                options={selectOptions}
+                label="Type of Study:"
+                name="study_type"
+              ></Select>
+            </div>
+          );
+        })}
+      </DynamicInputContainer>
 
       <button className="add-education" onClick={createEducation}>
         Add Education

@@ -5,13 +5,13 @@ import { useState } from "react";
 
 const inputs = [
   {
-    name: "first-name",
+    name: "first_name",
     label: "First Name:",
     type: "text",
     key: crypto.randomUUID(),
   },
   {
-    name: "last-name",
+    name: "last_name",
     label: "Last Name:",
     type: "text",
     key: crypto.randomUUID(),
@@ -23,7 +23,7 @@ const inputs = [
     key: crypto.randomUUID(),
   },
   {
-    name: "phone-number",
+    name: "phone_number",
     label: "Phone Number:",
     type: "tel",
     key: crypto.randomUUID(),
@@ -36,7 +36,12 @@ const inputs = [
   },
 ];
 
-function General({ updateInputArr, inputValues }) {
+function General({ performUpdate, needsUpdate, setFunc }) {
+  const [data, setData] = useState([]);
+
+  if (needsUpdate) {
+    performUpdate(data, setFunc);
+  }
   return (
     <div className="input-section">
       {inputs.map((input) => {
@@ -46,10 +51,9 @@ function General({ updateInputArr, inputValues }) {
             type={input.type}
             label={input.label}
             key={input.key}
-            updateInputs={updateInputArr}
-            sectionIndex="0"
-            index={inputs.indexOf(input)}
-            initialValue={inputValues[inputs.indexOf(input)]}
+            setData={setData}
+            data={data}
+            index={0}
           />
         );
       })}

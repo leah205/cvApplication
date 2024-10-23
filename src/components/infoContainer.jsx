@@ -1,11 +1,17 @@
 import "../styles/infoContainer.css";
 import dropDown from "../images/drop-down.svg";
+import { useState } from "react";
 
 //controlled inputs?
 //save input
-function InfoContainer({ title, children, editSection, isActive, index }) {
-  if (!isActive) {
-  }
+function InfoContainer({
+  title,
+  children,
+  editSection,
+  isActive,
+  index,
+  setIsUpdated,
+}) {
   return (
     <div className="info-container">
       <div className="header">
@@ -18,7 +24,10 @@ function InfoContainer({ title, children, editSection, isActive, index }) {
         {children}
       </div>
       {
-        <button className={`update-button ${!isActive && "hidden"}`}>
+        <button
+          onClick={() => setIsUpdated(index)}
+          className={`update-button ${!isActive && "hidden"}`}
+        >
           Update
         </button>
       }
