@@ -3,30 +3,33 @@ import { useState } from "react";
 import Input from "./input";
 import Select from "./Select";
 import DynamicInputContainer from "./dynamicInputSection";
-
 const inputs = [
   {
     name: "school",
     label: "School:",
     type: "text",
+    required: true,
     key: crypto.randomUUID(),
   },
   {
     name: "study_area",
     label: "Area of Study:",
     type: "text",
+    required: true,
     key: crypto.randomUUID(),
   },
   {
     name: "start_date",
     label: "Start Date:",
     type: "date",
+    required: true,
     key: crypto.randomUUID(),
   },
   {
     name: "end_date",
     label: "End Date:",
     type: "date",
+    required: false,
     key: crypto.randomUUID(),
   },
 ];
@@ -84,6 +87,7 @@ function Education({ performUpdate, needsUpdate, setFunc }) {
                     label={input.label}
                     name={input.name}
                     key={input.key}
+                    required={input.required}
                     data={data}
                     index={educations.indexOf(education)}
                   ></Input>
@@ -98,10 +102,6 @@ function Education({ performUpdate, needsUpdate, setFunc }) {
           );
         })}
       </DynamicInputContainer>
-
-      <button className="add-education" onClick={createEducation}>
-        Add Education
-      </button>
     </>
   );
 }

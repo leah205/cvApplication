@@ -128,11 +128,35 @@ table {
 }
 .edit-info {
   padding: 20px 50px;
-  margin-left: 200px;
+  margin-left: 50px;
 }
 
 #root {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100vw;
+  height: 100vh;
+}
+.resume-container {
+  width: 60%;
+  background: rgb(236, 236, 236);
+  display: flex;
+  justify-content: center;
+}
+.info-container {
+  font-family: "roboto";
+  margin-bottom: 100px;
+  width: 700px;
+}
+@media (max-width: 1500px) {
+  #root {
+    display: block;
+  }
+  .resume-container {
+    width: 100vw;
+  }
+  .info-container {
+    width: 80vw;
+    max-width: 1200px;
+  }
 }

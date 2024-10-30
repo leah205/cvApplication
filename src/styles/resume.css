@@ -1,14 +1,35 @@
+@font-face {
+  font-family: "roboto";
+  src: url("../Roboto/Roboto-Italic.ttf");
+}
 .resume {
-  height: 80vh;
-  font-size: 1.3rem;
+  font-family: "roboto";
+}
+
+.resume {
+  height: 100vh;
+  font-size: 1.4rem;
   padding: 20px;
-  border: 1px solid black;
-  width: 30vw;
+  width: min(75%, 1000px);
+  background: white;
 }
 .header-section {
   text-align: center;
   font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+.education,
+.job {
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 1.7rem;
 }
 h1 {
   font-size: 2rem;
+}
+.education-top,
+.job-top {
+  display: flex;
+  justify-content: space-between;
 }

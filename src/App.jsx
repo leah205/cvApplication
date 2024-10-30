@@ -7,7 +7,9 @@ import Education from "./components/Education";
 import WorkExperience from "./components/Work_Experience";
 import InfoContainer from "./components/infoContainer";
 import Resume from "./components/Resume";
-
+//change job description to text area
+//do required stuff
+//change to smaller screen
 function App() {
   const [openSection, setOpenSection] = useState(-1);
   const [generalInputs, setGeneralInputs] = useState();
@@ -83,7 +85,13 @@ function App() {
           />
         </InfoContainer>
       </div>
-      <Resume generalInputs={generalInputs} educationInputs={educationInputs} />
+      <div className="resume-container">
+        <Resume
+          generalInputs={generalInputs}
+          educationInputs={educationInputs}
+          jobInputs={jobInputs}
+        />
+      </div>
     </>
   );
 }
