@@ -36,12 +36,13 @@ const inputs = [
 
 const selectOptions = [
   {
-    value: "BS",
+    text: "BS",
     key: crypto.randomUUID(),
+    value: "Bachelor's Degree",
   },
-  { value: "AS", key: crypto.randomUUID() },
-  { value: "MS", key: crypto.randomUUID() },
-  { value: "PHD", key: crypto.randomUUID() },
+  { text: "AS", key: crypto.randomUUID(), value: "Associate's Degree" },
+  { text: "MS", key: crypto.randomUUID(), value: "Master's Degree" },
+  { text: "PHD", key: crypto.randomUUID(), value: "Post-doctorate Degree" },
 ];
 
 function Education({ performUpdate, needsUpdate, setFunc }) {
@@ -97,6 +98,9 @@ function Education({ performUpdate, needsUpdate, setFunc }) {
                 options={selectOptions}
                 label="Type of Study:"
                 name="study_type"
+                data={data}
+                setData={setData}
+                index={educations.indexOf(education)}
               ></Select>
             </div>
           );

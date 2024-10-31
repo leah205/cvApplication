@@ -31,7 +31,8 @@ export default function Resume({ generalInputs, educationInputs, jobInputs }) {
               return (
                 <div className="education">
                   <div className="education-top">
-                    <p>{educationInput.school}</p>
+                    <p>{educationInput.school + ", "}</p>
+                    <p>{educationInput.study_type}</p>
                     <p>
                       {formatDate(educationInput.start_date) +
                         " - " +

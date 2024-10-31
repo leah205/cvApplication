@@ -10,6 +10,7 @@ import Resume from "./components/Resume";
 //change job description to text area
 //do required stuff
 //change to smaller screen
+//breaks when try to update with no fields filled out
 function App() {
   const [openSection, setOpenSection] = useState(-1);
   const [generalInputs, setGeneralInputs] = useState();
