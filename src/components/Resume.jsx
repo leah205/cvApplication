@@ -11,17 +11,28 @@ export default function Resume({ generalInputs, educationInputs, jobInputs }) {
       date.substring(0, 4)
     );
   }
+
+  function getHeader() {
+    if (generalInputs && generalInputs.length) {
+      console.log(generalInputs);
+      return (
+        <>
+          <h1>
+            {generalInputs &&
+              generalInputs[0].first_name + " " + generalInputs[0].last_name}
+          </h1>
+          <p>{generalInputs && generalInputs[0].email}</p>
+          <p>{generalInputs && generalInputs[0].phone_number}</p>
+          <p>{generalInputs && generalInputs[0].address}</p>
+        </>
+      );
+    }
+    return "";
+  }
   return (
     <div className="resume">
-      <div className="header-section">
-        <h1>
-          {generalInputs &&
-            generalInputs[0].first_name + " " + generalInputs[0].last_name}
-        </h1>
-        <p>{generalInputs && generalInputs[0].email}</p>
-        <p>{generalInputs && generalInputs[0].phone_number}</p>
-        <p>{generalInputs && generalInputs[0].address}</p>
-      </div>
+      <div className="header-section">{getHeader()}</div>
+
       {educationInputs && (
         <div className="education-section">
           <h2>Education</h2>
