@@ -75,8 +75,8 @@ button img {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   text-align: center;
   padding: 0;
 }
@@ -91,4 +91,6 @@ button img {
   background: rgb(121, 169, 215);
   color: white;
   font-size: 2rem;
+}
+select {
 }
