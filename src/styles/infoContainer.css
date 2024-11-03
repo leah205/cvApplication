@@ -93,4 +93,8 @@ button img {
   font-size: 2rem;
 }
 select {
+  border-radius: 5px;
+  font-size: 1.3rem;
+  height: 50px;
+  background: white;
 }

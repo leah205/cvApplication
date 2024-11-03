@@ -1,7 +1,11 @@
 function Select({ options, label, name, setData, data, index }) {
   function handleChange(e) {
+    console.log(data[index]);
+    if (!data[index]) {
+      data[index] = {};
+    }
     data[index][name] = e.target.options[e.target.selectedIndex].value;
-    console.log(data);
+
     setData(data);
   }
   return (

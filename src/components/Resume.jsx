@@ -43,6 +43,7 @@ export default function Resume({ generalInputs, educationInputs, jobInputs }) {
                 <div className="education">
                   <div className="education-top">
                     <p>{educationInput.school + ", "}</p>
+                    {console.log(educationInput.study_type)}
                     <p>{educationInput.study_type}</p>
                     <p>
                       {formatDate(educationInput.start_date) +
