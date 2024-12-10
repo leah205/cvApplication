@@ -9,8 +9,7 @@ import InfoContainer from "./components/infoContainer";
 import Resume from "./components/Resume";
 //change job description to text area
 //do required stuff
-//change to smaller screen
-//breaks when try to update with no fields filled out
+//sort out data and education
 function App() {
   const [openSection, setOpenSection] = useState(-1);
   const [generalInputs, setGeneralInputs] = useState();
@@ -27,7 +26,7 @@ function App() {
   function performUpdate(data, setFunc) {
     setFunc(data);
     setIsUpdated(-1);
-    console.log("hello");
+    console.log(data);
   }
 
   function updateInputArray(sectionIndex) {

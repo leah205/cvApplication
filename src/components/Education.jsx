@@ -47,14 +47,14 @@ const selectOptions = [
 
 function Education({ performUpdate, needsUpdate, setFunc }) {
   const [educations, setEducations] = useState([]);
-  const [data, setData] = useState([]);
   if (needsUpdate) {
-    performUpdate(data, setFunc);
+    performUpdate(educations, setFunc);
   }
+  //dont perform update during delete
   function deleteEducation(index) {
-    setEducations(
-      educations.filter((education) => educations.indexOf(education) != index)
-    );
+    //performUpdate(educations, setFunc);
+
+    setEducations(educations.filter((e) => educations.indexOf(e) != index));
   }
 
   function createEducation() {
@@ -62,9 +62,10 @@ function Education({ performUpdate, needsUpdate, setFunc }) {
       ...educations,
       {
         school: "",
-        degree: "",
+        study_type: "",
         major: "",
-        grad_date: "",
+        start_date: "",
+        end_date: "",
         key: crypto.randomUUID(),
       },
     ]);
@@ -83,14 +84,17 @@ function Education({ performUpdate, needsUpdate, setFunc }) {
               {inputs.map((input) => {
                 return (
                   <Input
-                    setData={setData}
+                    setData={setEducations}
                     type={input.type}
                     label={input.label}
                     name={input.name}
                     key={input.key}
                     required={input.required}
-                    data={data}
+                    data={educations}
                     index={educations.indexOf(education)}
+                    initialValue={
+                      educations[educations.indexOf(education)][input.name]
+                    }
                   ></Input>
                 );
               })}
@@ -98,8 +102,8 @@ function Education({ performUpdate, needsUpdate, setFunc }) {
                 options={selectOptions}
                 label="Type of Study:"
                 name="study_type"
-                data={data}
-                setData={setData}
+                data={educations}
+                setData={setEducations}
                 index={educations.indexOf(education)}
               ></Select>
             </div>
