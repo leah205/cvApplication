@@ -43,6 +43,7 @@ const selectOptions = [
   { text: "AS", key: crypto.randomUUID(), value: "Associate's Degree" },
   { text: "MS", key: crypto.randomUUID(), value: "Master's Degree" },
   { text: "PHD", key: crypto.randomUUID(), value: "Post-doctorate Degree" },
+  { text: "Highschool", key: crypto.randomUUID(), value: "Highschool" },
 ];
 
 function Education({ performUpdate, needsUpdate, setFunc }) {

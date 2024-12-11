@@ -57,8 +57,6 @@ export default function Resume({ generalInputs, educationInputs, jobInputs }) {
                 <div className="education">
                   <div className="education-top">
                     <p className="school">{educationInput.school}</p>
-
-                    <p>{educationInput.study_type}</p>
                     <p>
                       {getDate(
                         educationInput.start_date,
@@ -66,6 +64,7 @@ export default function Resume({ generalInputs, educationInputs, jobInputs }) {
                       )}
                     </p>
                   </div>
+                  <p>{educationInput.study_type}</p>
                   <p>{educationInput.study_area}</p>
                 </div>
               );
