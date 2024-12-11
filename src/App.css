@@ -160,3 +160,16 @@ table {
     max-width: 1200px;
   }
 }
+
+@media (max-width: 500px) {
+  .info-container {
+    width: 90vw;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .edit-info {
+    margin-left: 0;
+    padding: 0;
+  }
+}

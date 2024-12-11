@@ -7,10 +7,11 @@ import Education from "./components/Education";
 import WorkExperience from "./components/Work_Experience";
 import InfoContainer from "./components/infoContainer";
 import Resume from "./components/Resume";
-//change job description to text area
 //do required stuff
 //add highschool
-//add text area
+//responsive for mobile device
+//align select with inputs
+//Labels should be the same
 function App() {
   const [openSection, setOpenSection] = useState(-1);
   const [generalInputs, setGeneralInputs] = useState();
@@ -27,7 +28,6 @@ function App() {
   function performUpdate(data, setFunc) {
     setFunc(data);
     setIsUpdated(-1);
-    console.log(data);
   }
 
   function updateInputArray(sectionIndex) {

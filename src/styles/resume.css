@@ -17,6 +17,7 @@
   width: min(75%, 1000px);
   background: white;
 }
+
 .header-section {
   text-align: center;
   font-size: 1.5rem;
@@ -46,4 +47,10 @@ h1 {
 }
 .education-section .school {
   font-family: "roboto-bold";
+}
+
+@media (max-width: 500px) {
+  .resume {
+    width: 95vw;
+  }
 }
