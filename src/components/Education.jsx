@@ -77,10 +77,11 @@ function Education({ performUpdate, needsUpdate, setFunc }) {
         createFunction={createEducation}
         deleteFunction={deleteEducation}
         buttonText="Add Education"
+        grid="grid"
       >
         {educations.map((education) => {
           return (
-            <div className="input-section" key={education.key}>
+            <div className="input-section education" key={education.key}>
               {inputs.map((input) => {
                 return (
                   <Input

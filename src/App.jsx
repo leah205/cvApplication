@@ -9,9 +9,7 @@ import InfoContainer from "./components/infoContainer";
 import Resume from "./components/Resume";
 //do required stuff
 //add highschool
-//responsive for mobile device
-//align select with inputs
-//Labels should be the same
+//fix giant gap in education section
 function App() {
   const [openSection, setOpenSection] = useState(-1);
   const [generalInputs, setGeneralInputs] = useState();

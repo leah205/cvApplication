@@ -6,12 +6,13 @@ function DynamicInputContainer({
   children,
   deleteFunction,
   createFunction,
+  grid,
 }) {
   return (
     <>
       {children.map((child) => {
         return (
-          <div className="dynamic-input">
+          <div className={`dynamic-input ${grid}`}>
             {child}
             <button
               className="delete_btn"
