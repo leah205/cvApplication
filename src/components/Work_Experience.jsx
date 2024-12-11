@@ -85,7 +85,7 @@ export default function WorkExperience({
                 index={jobs.indexOf(job)}
                 setData={setJobs}
                 name="description"
-                description="description"
+                description="Description:"
               ></Textarea>
             </>
           );
