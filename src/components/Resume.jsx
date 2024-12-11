@@ -56,13 +56,14 @@ export default function Resume({ generalInputs, educationInputs, jobInputs }) {
               return (
                 <div className="education">
                   <div className="education-top">
-                    <p className="school">{educationInput.school + ", "}</p>
+                    <p className="school">{educationInput.school}</p>
 
                     <p>{educationInput.study_type}</p>
                     <p>
-                      {formatDate(educationInput.start_date) +
-                        " - " +
-                        formatDate(educationInput.end_date)}
+                      {getDate(
+                        educationInput.start_date,
+                        educationInput.end_date
+                      )}
                     </p>
                   </div>
                   <p>{educationInput.study_area}</p>
@@ -81,11 +82,7 @@ export default function Resume({ generalInputs, educationInputs, jobInputs }) {
                 <div className="job">
                   <div className="job-top">
                     <p className="company">{jobInput.company}</p>
-                    <p>
-                      {formatDate(jobInput.start_date) +
-                        " - " +
-                        formatDate(jobInput.end_date)}
-                    </p>
+                    <p>{getDate(jobInput.start_date, jobInput.end_date)}</p>
                   </div>
                   <p className="position">{jobInput.position}</p>
                   <p className="description">{jobInput.description}</p>
