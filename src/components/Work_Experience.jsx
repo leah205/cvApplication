@@ -1,5 +1,6 @@
 import { useState } from "react";
 import DynamicInputContainer from "./dynamicInputSection";
+import Textarea from "./textArea";
 import Input from "./input";
 
 const inputs = [
@@ -13,12 +14,6 @@ const inputs = [
     name: "position",
     label: "Job Position:",
     type: "text",
-    key: crypto.randomUUID(),
-  },
-  {
-    name: "description",
-    label: "Job Description:",
-    type: "textarea",
     key: crypto.randomUUID(),
   },
   {
@@ -69,21 +64,30 @@ export default function WorkExperience({
       >
         {jobs.map((job) => {
           return (
-            <div className="input-section" key={job.key}>
-              {inputs.map((input) => {
-                return (
-                  <Input
-                    type={input.type}
-                    label={input.label}
-                    name={input.name}
-                    key={input.key}
-                    data={jobs}
-                    index={jobs.indexOf(job)}
-                    setData={setJobs}
-                  ></Input>
-                );
-              })}
-            </div>
+            <>
+              <div className="input-section" key={job.key}>
+                {inputs.map((input) => {
+                  return (
+                    <Input
+                      type={input.type}
+                      label={input.label}
+                      name={input.name}
+                      key={input.key}
+                      data={jobs}
+                      index={jobs.indexOf(job)}
+                      setData={setJobs}
+                    ></Input>
+                  );
+                })}
+              </div>
+              <Textarea
+                data={jobs}
+                index={jobs.indexOf(job)}
+                setData={setJobs}
+                name="description"
+                description="description"
+              ></Textarea>
+            </>
           );
         })}
       </DynamicInputContainer>

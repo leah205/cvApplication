@@ -2,6 +2,10 @@
   font-family: "roboto";
   src: url("../Roboto/Roboto-Italic.ttf");
 }
+@font-face {
+  font-family: "roboto-bold";
+  src: url("../Roboto/Roboto-BoldItalic.ttf");
+}
 .resume {
   font-family: "roboto";
 }
@@ -32,4 +36,14 @@ h1 {
 .job-top {
   display: flex;
   justify-content: space-between;
+}
+.job-section .company {
+  font-family: "roboto-bold";
+}
+.job-section .description {
+  margin-top: 15px;
+  text-align: center;
+}
+.education-section .school {
+  font-family: "roboto-bold";
 }

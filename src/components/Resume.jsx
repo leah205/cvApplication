@@ -12,6 +12,20 @@ export default function Resume({ generalInputs, educationInputs, jobInputs }) {
     );
   }
 
+  function getDate(start, end) {
+    let formattedStart = formatDate(start);
+    let formattedEnd = formatDate(end);
+    if (formattedStart == "present" && formattedEnd == "present") {
+      return;
+    } else {
+      if (formattedStart == "present" && !(formattedEnd == "present")) {
+        return formattedEnd;
+      } else {
+        return formattedStart + " - " + formattedEnd;
+      }
+    }
+  }
+
   function getHeader() {
     if (generalInputs && generalInputs.length) {
       console.log(generalInputs);
@@ -42,8 +56,8 @@ export default function Resume({ generalInputs, educationInputs, jobInputs }) {
               return (
                 <div className="education">
                   <div className="education-top">
-                    <p>{educationInput.school + ", "}</p>
-                    {console.log(educationInput.study_type)}
+                    <p className="school">{educationInput.school + ", "}</p>
+
                     <p>{educationInput.study_type}</p>
                     <p>
                       {formatDate(educationInput.start_date) +
@@ -66,15 +80,15 @@ export default function Resume({ generalInputs, educationInputs, jobInputs }) {
               return (
                 <div className="job">
                   <div className="job-top">
-                    <p>{jobInput.company}</p>
+                    <p className="company">{jobInput.company}</p>
                     <p>
                       {formatDate(jobInput.start_date) +
                         " - " +
                         formatDate(jobInput.end_date)}
                     </p>
                   </div>
-                  <p>{jobInput.position}</p>
-                  <p>{jobInput.description}</p>
+                  <p className="position">{jobInput.position}</p>
+                  <p className="description">{jobInput.description}</p>
                 </div>
               );
             })}

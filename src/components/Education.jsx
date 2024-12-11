@@ -105,6 +105,9 @@ function Education({ performUpdate, needsUpdate, setFunc }) {
                 data={educations}
                 setData={setEducations}
                 index={educations.indexOf(education)}
+                selected={
+                  educations[educations.indexOf(education)]["study_type"]
+                }
               ></Select>
             </div>
           );

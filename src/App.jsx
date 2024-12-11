@@ -9,7 +9,8 @@ import InfoContainer from "./components/infoContainer";
 import Resume from "./components/Resume";
 //change job description to text area
 //do required stuff
-//sort out data and education
+//add highschool
+//add text area
 function App() {
   const [openSection, setOpenSection] = useState(-1);
   const [generalInputs, setGeneralInputs] = useState();
